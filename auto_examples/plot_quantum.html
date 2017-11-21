@@ -1,0 +1,186 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Some Quantum Mechanics, filling an atomic orbital &#8212; Sphinx-Gallery 0.1.13-git documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/seaborn.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.13-git',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Seaborn example" href="plot_seaborn.html" />
+    <link rel="prev" title="Colormaps alter your perception" href="plot_colors.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="plot_seaborn.html" title="Seaborn example"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_colors.html" title="Colormaps alter your perception"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Gallery of Examples</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="some-quantum-mechanics-filling-an-atomic-orbital">
+<span id="sphx-glr-auto-examples-plot-quantum-py"></span><h1>Some Quantum Mechanics, filling an atomic orbital<a class="headerlink" href="#some-quantum-mechanics-filling-an-atomic-orbital" title="Permalink to this headline">¶</a></h1>
+<p>Considering an atomic single orbital and how to fill it by use of the
+chemical potential. This system has a four element basis, <span class="math">\(B =
+\{ \lvert \emptyset \rangle, \lvert \uparrow \rangle, \lvert
+\downarrow \rangle, \lvert \uparrow\downarrow \rangle \}\)</span>, that is the
+empty orbital, one spin up electron, one spin down electron and the
+filled orbital.</p>
+<p>The environment of the orbital is set up by an energy cost for
+occupying the orbital, that is <span class="math">\(\epsilon\)</span> and when both
+electrons meet a contact interaction corresponding to the Coulomb
+repulsion <span class="math">\(U\)</span>. Finally the chemical potential <span class="math">\(\mu\)</span> is
+what allows in the Grand canonical picture, to fill up our atomic
+orbital from a reservoir of electrons.</p>
+<blockquote>
+<div>The the simple Hamiltonian to model this system is given by:</div></blockquote>
+<div class="math">
+\[\mathcal{H} =
+     \sum_{\sigma=\uparrow,\downarrow} \epsilon c^\dagger_\sigma c_\sigma
+    + Un_\uparrow n_\downarrow - \mu \hat{N}\]</div>
+<p>Here <span class="math">\(c^\dagger,c\)</span> creation and annihilation operators,
+<span class="math">\(n=c^\dagger c\)</span>, and
+<span class="math">\(\hat{N}=n_\uparrow+n_\downarrow\)</span>. This Hamiltonian is diagonal
+in the basis of particle number we have chosen earlier, as the basis
+elements are also eigenvectors.</p>
+<div class="math">
+\[\begin{split}\mathcal{H} \lvert \emptyset \rangle &amp;= 0 \\
+\mathcal{H} \lvert \uparrow  \rangle &amp;= (\epsilon - \mu) | \uparrow  \rangle \\
+\mathcal{H} \lvert \downarrow  \rangle &amp;= (\epsilon - \mu) | \downarrow  \rangle \\
+\mathcal{H} \lvert \uparrow\downarrow \rangle &amp;= (2\epsilon - 2\mu +U) \lvert \uparrow\downarrow \rangle\end{split}\]</div>
+<p>It is easy to see, that the system will prefer to be empty if
+<span class="math">\(\mu \in [0,\epsilon)\)</span>, be single occupied if <span class="math">\(\mu \in (\epsilon, \epsilon +U)\)</span>
+and doubly occupied if <span class="math">\(\mu &gt; \epsilon +U\)</span>.</p>
+<p>For a more rigorous treatment, the partition function has to be
+calculated and then the expected particle number can be
+found. Introducing a new variable <span class="math">\(\xi = \epsilon - \mu\)</span>, and
+<span class="math">\(\beta\)</span> corresponding to the inverse temperature of the system.</p>
+<div class="math">
+\[\begin{split}\mathcal{Z} &amp;= Tr(e^{-\beta \mathcal{H}}) = 1 + 2e^{-\beta\xi} + e^{-\beta(2\xi + U)} \\
+\langle \hat{N} \rangle &amp;= \frac{1}{\beta} \frac{\partial}{\partial \mu} \ln \mathcal{Z}\end{split}\]</div>
+<img alt="../_images/sphx_glr_plot_quantum_001.png" class="align-center" src="../_images/sphx_glr_plot_quantum_001.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Code source: Óscar Nájera</span>
+<span class="c1"># License: BSD 3 clause</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">mu</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp.html#numpy.exp" title="View documentation for numpy.exp"><span class="n">np</span><span class="o">.</span><span class="n">exp</span></a><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="p">(</span><span class="n">mu</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp.html#numpy.exp" title="View documentation for numpy.exp"><span class="n">np</span><span class="o">.</span><span class="n">exp</span></a><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">mu</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)))</span> <span class="o">/</span> \
+        <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp.html#numpy.exp" title="View documentation for numpy.exp"><span class="n">np</span><span class="o">.</span><span class="n">exp</span></a><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="p">(</span><span class="n">mu</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp.html#numpy.exp" title="View documentation for numpy.exp"><span class="n">np</span><span class="o">.</span><span class="n">exp</span></a><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="p">(</span><span class="n">mu</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))))</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="View documentation for matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\beta={0}$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="View documentation for matplotlib.pyplot.xlabel"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$ ($\epsilon=1$, $U=1$)&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="View documentation for matplotlib.pyplot.ylabel"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\langle N \rangle=\langle n_\uparrow \rangle+\langle n_\downarrow\rangle$&#39;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="View documentation for matplotlib.pyplot.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.078 seconds)</p>
+<div class="binder-badge figure">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/choldgraf/sphinx-gallery/gh-pages?filepath=_downloads/plot_quantum.ipynb"><img alt="http://mybinder.org/badge.svg" src="http://mybinder.org/badge.svg" width="150px" /></a>
+</div>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/plot_quantum.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_quantum.py</span></code></a></div>
+<div class="sphx-glr-download docutils container">
+<a class="reference download internal" href="../_downloads/plot_quantum.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_quantum.ipynb</span></code></a></div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plot_colors.html"
+                        title="previous chapter">Colormaps alter your perception</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot_seaborn.html"
+                        title="next chapter">Seaborn example</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/auto_examples/plot_quantum.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="plot_seaborn.html" title="Seaborn example"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_colors.html" title="Colormaps alter your perception"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Gallery of Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2017, Óscar Nájera.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,425 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sphinx_gallery.gen_rst &#8212; Sphinx-Gallery 0.1.13-git documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/seaborn.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.13-git',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sphinx_gallery.gen_rst">
+<span id="sphinx-gallery-gen-rst"></span><h1>sphinx_gallery.gen_rst<a class="headerlink" href="#module-sphinx_gallery.gen_rst" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rst-file-generator">
+<h2>RST file generator<a class="headerlink" href="#rst-file-generator" title="Permalink to this headline">¶</a></h2>
+<p>Generate the rst files for the examples by iterating over the python
+example files.</p>
+<p>Files that generate images should start with ‘plot’</p>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="sphinx_gallery.gen_rst.clean_modules">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">clean_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.clean_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove “unload” seaborn from the name space</p>
+<p>After a script is executed it can load a variety of setting that one
+does not want to influence in other examples in the gallery.</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.codestr2rst">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">codestr2rst</code><span class="sig-paren">(</span><em>codestr</em>, <em>lang='python'</em>, <em>lineno=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.codestr2rst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return reStructuredText code block from code string</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.execute_code_block">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">execute_code_block</code><span class="sig-paren">(</span><em>compiler</em>, <em>src_file</em>, <em>code_block</em>, <em>lineno</em>, <em>example_globals</em>, <em>block_vars</em>, <em>gallery_conf</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.execute_code_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the code block of the example file</p>
+</dd></dl>
+
+<div style='clear:both'></div><div style='clear:both'></div><div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.figure_rst">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">figure_rst</code><span class="sig-paren">(</span><em>figure_list</em>, <em>sources_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.figure_rst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of paths to figures generate the corresponding rst</p>
+<p>Depending on whether we have one or more figures, we use a
+single rst call to ‘image’ or a horizontal list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>figure_list</strong> (<em>list of str</em>) – Strings are the figures’ absolute paths</li>
+<li><strong>sources_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – absolute path of Sphinx documentation sources</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>images_rst</strong> (<em>str</em>) – rst code to embed the images in the document</li>
+<li><strong>fig_num</strong> (<em>int</em>) – number of figures saved</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.generate_dir_rst">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">generate_dir_rst</code><span class="sig-paren">(</span><em>src_dir</em>, <em>target_dir</em>, <em>gallery_conf</em>, <em>seen_backrefs</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.generate_dir_rst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the gallery reStructuredText for an example directory</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.generate_file_rst">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">generate_file_rst</code><span class="sig-paren">(</span><em>fname</em>, <em>target_dir</em>, <em>src_dir</em>, <em>gallery_conf</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.generate_file_rst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the rst file for a given example.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>intro</strong> (<em>str</em>) – The introduction of the example</li>
+<li><strong>time_elapsed</strong> (<em>float</em>) – seconds required to run the script</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.get_md5sum">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">get_md5sum</code><span class="sig-paren">(</span><em>src_file</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.get_md5sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns md5sum of file</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.glr_path_static">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">glr_path_static</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.glr_path_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns path to packaged static files</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.indent">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">indent</code><span class="sig-paren">(</span><em>text</em>, <em>prefix</em>, <em>predicate=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.indent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds ‘prefix’ to the beginning of selected lines in ‘text’.</p>
+<p>If ‘predicate’ is provided, ‘prefix’ will only be added to the lines
+where ‘predicate(line)’ is True. If ‘predicate’ is not provided,
+it will default to adding ‘prefix’ to all non-empty lines that do not
+consist solely of whitespace characters.</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.jupyter_notebook">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">jupyter_notebook</code><span class="sig-paren">(</span><em>script_blocks</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.jupyter_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a Jupyter notebook file cell-by-cell</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>script_blocks</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – script execution cells</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.md5sum_is_current">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">md5sum_is_current</code><span class="sig-paren">(</span><em>src_file</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.md5sum_is_current" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether src_file has the same md5 hash as the one on disk</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.save_figures">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">save_figures</code><span class="sig-paren">(</span><em>image_path</em>, <em>fig_count</em>, <em>gallery_conf</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.save_figures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save all open matplotlib figures of the example code-block</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Path where plots are saved (format string which accepts figure number)</li>
+<li><strong>fig_count</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Previous figure number count. Figure number add from this number</li>
+<li><strong>gallery_conf</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – Contains the configuration of Sphinx-Gallery</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>images_rst</strong> (<em>str</em>) – rst code to embed the images in the document</li>
+<li><strong>fig_num</strong> (<em>int</em>) – number of figures saved</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.save_notebook">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">save_notebook</code><span class="sig-paren">(</span><em>work_notebook</em>, <em>write_file</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.save_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the Jupyter work_notebook to write_file</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.save_thumbnail">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">save_thumbnail</code><span class="sig-paren">(</span><em>image_path_template</em>, <em>src_file</em>, <em>file_conf</em>, <em>gallery_conf</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.save_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the thumbnail image</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.scale_image">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">scale_image</code><span class="sig-paren">(</span><em>in_fname</em>, <em>out_fname</em>, <em>max_width</em>, <em>max_height</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.scale_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scales an image with the same aspect ratio centered in an
+image with a given max_width and max_height
+if in_fname == out_fname the image can only be scaled down</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.split_code_and_text_blocks">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">split_code_and_text_blocks</code><span class="sig-paren">(</span><em>source_file</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.split_code_and_text_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list with source file separated into code and text blocks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>file_conf</strong> (<em>dict</em>) – File-specific settings given in comments as:
+# sphinx_gallery_&lt;name&gt; = &lt;value&gt;</li>
+<li><strong>blocks</strong> (<em>list of (label, content)</em>) – List where each element is a tuple with the label (‘text’ or ‘code’),
+and content string of block.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.time">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">time</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; floating point number<a class="headerlink" href="#sphinx_gallery.gen_rst.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current time in seconds since the Epoch.
+Fractions of a second may be present if the system clock provides them.</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_rst.write_backreferences">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">write_backreferences</code><span class="sig-paren">(</span><em>seen_backrefs</em>, <em>gallery_conf</em>, <em>target_dir</em>, <em>fname</em>, <em>snippet</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.write_backreferences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes down back reference files, which include a thumbnail list
+of examples using a certain module</p>
+</dd></dl>
+
+<div style='clear:both'></div></div>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="sphinx_gallery.gen_rst.MixedEncodingStringIO">
+<em class="property">class </em><code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">MixedEncodingStringIO</code><a class="headerlink" href="#sphinx_gallery.gen_rst.MixedEncodingStringIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper when both ASCII and unicode strings will be written</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sphinx_gallery.gen_rst.StringIO">
+<em class="property">class </em><code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">StringIO</code><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text I/O implementation using an in-memory buffer.</p>
+<p>The initial_value argument sets the value of object.  The newline
+argument is like the one of TextIOWrapper’s constructor.</p>
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the IO object.</p>
+<p>Attempting any further operation after the object is closed
+will raise a ValueError.</p>
+<p>This method has no effect if the file is already closed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.getvalue">
+<code class="descname">getvalue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.getvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the entire contents of the object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.read">
+<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read at most size characters, returned as a string.</p>
+<p>If the argument is negative or omitted, read until EOF
+is reached. Return an empty string at EOF.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.readable">
+<code class="descname">readable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.readable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be read.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.readline">
+<code class="descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.readline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read until newline or EOF.</p>
+<p>Returns an empty string if EOF is hit immediately.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.seek">
+<code class="descname">seek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change stream position.</p>
+<dl class="docutils">
+<dt>Seek to character offset pos relative to position indicated by whence:</dt>
+<dd>0  Start of stream (the default).  pos should be &gt;= 0;
+1  Current position - pos must be 0;
+2  End of stream - pos must be 0.</dd>
+</dl>
+<p>Returns the new absolute position.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.seekable">
+<code class="descname">seekable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.seekable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be seeked.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.tell">
+<code class="descname">tell</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.tell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell the current file position.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.truncate">
+<code class="descname">truncate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.truncate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Truncate size to pos.</p>
+<p>The pos argument defaults to the current file position, as
+returned by tell().  The current file position is unchanged.
+Returns the new absolute position.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.writable">
+<code class="descname">writable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the IO object can be written.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sphinx_gallery.gen_rst.StringIO.write">
+<code class="descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_rst.StringIO.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write string to file.</p>
+<p>Returns the number of characters written, which is always equal to
+the length of the string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sphinx_gallery.gen_rst.basestring">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">basestring</code><a class="headerlink" href="#sphinx_gallery.gen_rst.basestring" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sphinx_gallery.gen_rst.unicode">
+<code class="descclassname">sphinx_gallery.gen_rst.</code><code class="descname">unicode</code><a class="headerlink" href="#sphinx_gallery.gen_rst.unicode" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a></p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">sphinx_gallery.gen_rst</a><ul>
+<li><a class="reference internal" href="#rst-file-generator">RST file generator</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gen_modules/sphinx_gallery.gen_rst.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2017, Óscar Nájera.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sphinx_gallery.gen_gallery &#8212; Sphinx-Gallery 0.1.13-git documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/seaborn.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.13-git',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sphinx_gallery.gen_gallery">
+<span id="sphinx-gallery-gen-gallery"></span><h1>sphinx_gallery.gen_gallery<a class="headerlink" href="#module-sphinx_gallery.gen_gallery" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sphinx-gallery-generator">
+<h2>Sphinx-Gallery Generator<a class="headerlink" href="#sphinx-gallery-generator" title="Permalink to this headline">¶</a></h2>
+<p>Attaches Sphinx-Gallery to Sphinx in order to generate the galleries
+when building the documentation.</p>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="sphinx_gallery.gen_gallery.clean_gallery_out">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">clean_gallery_out</code><span class="sig-paren">(</span><em>build_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.clean_gallery_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes images under the sphx_glr namespace in the build directory</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.embed_code_links">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">embed_code_links</code><span class="sig-paren">(</span><em>app</em>, <em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.embed_code_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Embed hyperlinks to documentation into example code</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.generate_dir_rst">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">generate_dir_rst</code><span class="sig-paren">(</span><em>src_dir</em>, <em>target_dir</em>, <em>gallery_conf</em>, <em>seen_backrefs</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.generate_dir_rst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the gallery reStructuredText for an example directory</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.generate_gallery_rst">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">generate_gallery_rst</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.generate_gallery_rst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the Main examples gallery reStructuredText</p>
+<p>Start the sphinx-gallery configuration and recursively scan the examples
+directories in order to populate the examples gallery</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.generate_zipfiles">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">generate_zipfiles</code><span class="sig-paren">(</span><em>gallery_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.generate_zipfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects all Python source files and Jupyter notebooks in
+gallery_dir and makes zipfiles of them</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gallery_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – path of the gallery to collect downloadable sources</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>download_rst</strong> – RestructuredText to include download buttons to the generated files</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.get_default_config_value">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">get_default_config_value</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.get_default_config_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.glr_path_static">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">glr_path_static</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.glr_path_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns path to packaged static files</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.parse_config">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">parse_config</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.parse_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the Sphinx Gallery configuration</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.setup">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup sphinx-gallery sphinx extension</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.sumarize_failing_examples">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">sumarize_failing_examples</code><span class="sig-paren">(</span><em>app</em>, <em>exception</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.sumarize_failing_examples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects the list of falling examples during build and prints them with the traceback</p>
+<p>Raises ValueError if there where failing examples</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.gen_gallery.touch_empty_backreferences">
+<code class="descclassname">sphinx_gallery.gen_gallery.</code><code class="descname">touch_empty_backreferences</code><span class="sig-paren">(</span><em>app</em>, <em>what</em>, <em>name</em>, <em>obj</em>, <em>options</em>, <em>lines</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.gen_gallery.touch_empty_backreferences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate empty back-reference example files</p>
+<p>This avoids inclusion errors/warnings if there are no gallery
+examples for a class / module that is being parsed by autodoc</p>
+</dd></dl>
+
+<div style='clear:both'></div></div>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">sphinx_gallery.gen_gallery</a><ul>
+<li><a class="reference internal" href="#sphinx-gallery-generator">Sphinx-Gallery Generator</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gen_modules/sphinx_gallery.gen_gallery.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2017, Óscar Nájera.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
+    </div>
+  </body>
+</html>

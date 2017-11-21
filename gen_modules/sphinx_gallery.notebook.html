@@ -1,0 +1,253 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sphinx_gallery.notebook &#8212; Sphinx-Gallery 0.1.13-git documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/seaborn.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.13-git',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sphinx_gallery.notebook">
+<span id="sphinx-gallery-notebook"></span><h1>sphinx_gallery.notebook<a class="headerlink" href="#module-sphinx_gallery.notebook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="parser-for-jupyter-notebooks">
+<h2>Parser for Jupyter notebooks<a class="headerlink" href="#parser-for-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>Class that holds the Jupyter notebook information</p>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="sphinx_gallery.notebook.add_code_cell">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">add_code_cell</code><span class="sig-paren">(</span><em>work_notebook</em>, <em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.add_code_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a code cell to the notebook</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>code</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Cell content</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.add_markdown_cell">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">add_markdown_cell</code><span class="sig-paren">(</span><em>work_notebook</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.add_markdown_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a markdown cell to the notebook</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>code</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Cell content</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.directive_fun">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">directive_fun</code><span class="sig-paren">(</span><em>match</em>, <em>directive</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.directive_fun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper to fill in directives</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.fill_notebook">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">fill_notebook</code><span class="sig-paren">(</span><em>work_notebook</em>, <em>script_blocks</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.fill_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the Jupyter notebook cells</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>script_blocks</strong> (<em>list of tuples</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.jupyter_notebook">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">jupyter_notebook</code><span class="sig-paren">(</span><em>script_blocks</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.jupyter_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a Jupyter notebook file cell-by-cell</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>script_blocks</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – script execution cells</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.jupyter_notebook_skeleton">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">jupyter_notebook_skeleton</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.jupyter_notebook_skeleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with the elements of a Jupyter notebook</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.python_to_jupyter_cli">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">python_to_jupyter_cli</code><span class="sig-paren">(</span><em>args=None</em>, <em>namespace=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.python_to_jupyter_cli" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exposes the jupyter notebook renderer to the command line</p>
+<p>Takes the same arguments as ArgumentParser.parse_args</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.rst2md">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">rst2md</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.rst2md" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the RST text from the examples docstrigs and comments
+into markdown text for the Jupyter notebooks</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.save_notebook">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">save_notebook</code><span class="sig-paren">(</span><em>work_notebook</em>, <em>write_file</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.save_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the Jupyter work_notebook to write_file</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.notebook.split_code_and_text_blocks">
+<code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">split_code_and_text_blocks</code><span class="sig-paren">(</span><em>source_file</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.notebook.split_code_and_text_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list with source file separated into code and text blocks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>file_conf</strong> (<em>dict</em>) – File-specific settings given in comments as:
+# sphinx_gallery_&lt;name&gt; = &lt;value&gt;</li>
+<li><strong>blocks</strong> (<em>list of (label, content)</em>) – List where each element is a tuple with the label (‘text’ or ‘code’),
+and content string of block.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div style='clear:both'></div></div>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="sphinx_gallery.notebook.partial">
+<em class="property">class </em><code class="descclassname">sphinx_gallery.notebook.</code><code class="descname">partial</code><a class="headerlink" href="#sphinx_gallery.notebook.partial" title="Permalink to this definition">¶</a></dt>
+<dd><p>partial(func, <a href="#id1"><span class="problematic" id="id2">*</span></a>args, <a href="#id3"><span class="problematic" id="id4">**</span></a>keywords) - new function with partial application
+of the given arguments and keywords.</p>
+<dl class="attribute">
+<dt id="sphinx_gallery.notebook.partial.args">
+<code class="descname">args</code><a class="headerlink" href="#sphinx_gallery.notebook.partial.args" title="Permalink to this definition">¶</a></dt>
+<dd><p>tuple of arguments to future partial calls</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sphinx_gallery.notebook.partial.func">
+<code class="descname">func</code><a class="headerlink" href="#sphinx_gallery.notebook.partial.func" title="Permalink to this definition">¶</a></dt>
+<dd><p>function object to use in future partial calls</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sphinx_gallery.notebook.partial.keywords">
+<code class="descname">keywords</code><a class="headerlink" href="#sphinx_gallery.notebook.partial.keywords" title="Permalink to this definition">¶</a></dt>
+<dd><p>dictionary of keyword arguments to future partial calls</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">sphinx_gallery.notebook</a><ul>
+<li><a class="reference internal" href="#parser-for-jupyter-notebooks">Parser for Jupyter notebooks</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gen_modules/sphinx_gallery.notebook.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2017, Óscar Nájera.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
+    </div>
+  </body>
+</html>

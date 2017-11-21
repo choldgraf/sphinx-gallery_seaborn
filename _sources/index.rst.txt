@@ -1,0 +1,20 @@
+.. Sphinx-Gallery documentation master file, created by
+   sphinx-quickstart on Mon Nov 17 16:01:26 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Sphinx-Gallery's documentation!
+==========================================
+
+A `Sphinx <http://sphinx-doc.org/>`_ extension that builds an HTML
+gallery of examples from any set of Python scripts.
+
+It is extracted from the scikit-learn project and aims to be an
+independent general purpose extension.
+
+The code of the project is on Github: `Sphinx-Gallery <https://github.com/sphinx-gallery/sphinx-gallery>`_
+
+.. toctree::
+   :maxdepth: 2
+
+   auto_examples/index

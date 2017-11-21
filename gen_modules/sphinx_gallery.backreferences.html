@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sphinx_gallery.backreferences &#8212; Sphinx-Gallery 0.1.13-git documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/seaborn.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.13-git',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sphinx_gallery.backreferences">
+<span id="sphinx-gallery-backreferences"></span><h1>sphinx_gallery.backreferences<a class="headerlink" href="#module-sphinx_gallery.backreferences" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="backreferences-generator">
+<h2>Backreferences Generator<a class="headerlink" href="#backreferences-generator" title="Permalink to this headline">¶</a></h2>
+<p>Parses example file code in order to keep track of used functions</p>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="sphinx_gallery.backreferences.get_short_module_name">
+<code class="descclassname">sphinx_gallery.backreferences.</code><code class="descname">get_short_module_name</code><span class="sig-paren">(</span><em>module_name</em>, <em>obj_name</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.backreferences.get_short_module_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the shortest possible module name</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.backreferences.identify_names">
+<code class="descclassname">sphinx_gallery.backreferences.</code><code class="descname">identify_names</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.backreferences.identify_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a codeobj summary by identifying and resolving used names</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">code</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">... </span><span class="s1">from a.b import c</span>
+<span class="gp">... </span><span class="s1">import d as e</span>
+<span class="gp">... </span><span class="s1">print(c)</span>
+<span class="gp">... </span><span class="s1">e.HelloWorld().f.g</span>
+<span class="gp">... </span><span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">identify_names</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">o</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">o</span><span class="p">[</span><span class="s1">&#39;module&#39;</span><span class="p">],</span> <span class="n">o</span><span class="p">[</span><span class="s1">&#39;module_short&#39;</span><span class="p">])</span>
+<span class="go">c c a.b a.b</span>
+<span class="go">e.HelloWorld HelloWorld d d</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="section" id="examples-using-sphinx-gallery-backreferences-identify-names">
+<h4>Examples using <code class="docutils literal"><span class="pre">sphinx_gallery.backreferences.identify_names</span></code><a class="headerlink" href="#examples-using-sphinx-gallery-backreferences-identify-names" title="Permalink to this headline">¶</a></h4>
+<div class="sphx-glr-thumbcontainer" tooltip="Calls Sphinx-Gallery identify names function to figure out which functions are called in the sc..."><div class="figure" id="id1">
+<img alt="../_images/sphx_glr_plot_function_identifier_thumb.png" src="../_images/sphx_glr_plot_function_identifier_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_function_identifier.html#sphx-glr-auto-examples-plot-function-identifier-py"><span class="std std-ref">Identifying function names in a script</span></a></span></p>
+</div>
+</div><div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.backreferences.scan_used_functions">
+<code class="descclassname">sphinx_gallery.backreferences.</code><code class="descname">scan_used_functions</code><span class="sig-paren">(</span><em>example_file</em>, <em>gallery_conf</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.backreferences.scan_used_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>save variables so we can later add links to the documentation</p>
+</dd></dl>
+
+<div style='clear:both'></div><dl class="function">
+<dt id="sphinx_gallery.backreferences.write_backreferences">
+<code class="descclassname">sphinx_gallery.backreferences.</code><code class="descname">write_backreferences</code><span class="sig-paren">(</span><em>seen_backrefs</em>, <em>gallery_conf</em>, <em>target_dir</em>, <em>fname</em>, <em>snippet</em><span class="sig-paren">)</span><a class="headerlink" href="#sphinx_gallery.backreferences.write_backreferences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes down back reference files, which include a thumbnail list
+of examples using a certain module</p>
+</dd></dl>
+
+<div style='clear:both'></div></div>
+</div>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="sphinx_gallery.backreferences.NameFinder">
+<em class="property">class </em><code class="descclassname">sphinx_gallery.backreferences.</code><code class="descname">NameFinder</code><a class="headerlink" href="#sphinx_gallery.backreferences.NameFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the longest form of variable names and their imports in code</p>
+<p>Only retains names from imported modules.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">sphinx_gallery.backreferences</a><ul>
+<li><a class="reference internal" href="#backreferences-generator">Backreferences Generator</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a><ul>
+<li><a class="reference internal" href="#examples-using-sphinx-gallery-backreferences-identify-names">Examples using <code class="docutils literal"><span class="pre">sphinx_gallery.backreferences.identify_names</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gen_modules/sphinx_gallery.backreferences.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-Gallery 0.1.13-git documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014-2017, Óscar Nájera.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.4.
+    </div>
+  </body>
+</html>
