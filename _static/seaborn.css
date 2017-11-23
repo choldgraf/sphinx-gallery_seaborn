@@ -15,9 +15,9 @@
 .sphx-glr-thumbcontainer img {
   display: inline;
   width: 160px;
-  -moz-transform: scale(3.5);
-  -webkit-transform: scale(3.5);
-  transform: scale(3.5);
+  -moz-transform: scale(3.0);
+  -webkit-transform: scale(3.0);
+  transform: scale(3.0);
 }
 
 div.figure p.caption span.caption-text {
