@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Docs
+auto_examples/
+gen_modules/
+_build
+doc/tutorials/

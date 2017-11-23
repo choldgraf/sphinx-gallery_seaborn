@@ -1,0 +1,81 @@
+.sphx-glr-thumbcontainer {
+  min-height: 0px;
+  height: 220px;
+  width: 220px;
+  padding-top: 0px;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.sphx-glr-thumbcontainer div.figure{
+  padding: 0px;
+  margin: 0px;
+}
+
+.sphx-glr-thumbcontainer img {
+  display: inline;
+  width: 160px;
+  -moz-transform: scale(3.0);
+  -webkit-transform: scale(3.0);
+  transform: scale(3.0);
+}
+
+div.figure p.caption span.caption-text {
+    padding: 35% 25%;
+    text-align: center
+    font-size: 1.5em;
+}
+
+.sphx-glr-thumbcontainer[tooltip]:after, .sphx-glr-thumbcontainer[tooltip]:before {
+    visibility: hidden;
+}
+
+span.caption-text {
+  visibility: hidden;
+  width: 160px
+}
+
+div.figure p.caption {
+  width: 220px;
+  height: 220px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: inline;
+  padding: 0;
+}
+
+.sphx-glr-thumbcontainer a.internal {
+  padding: 40% 10%;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+/*Hovering behavior*/
+
+.sphx-glr-thumbcontainer:hover {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px black;
+}
+
+.sphx-glr-thumbcontainer:hover img {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+}
+
+.sphx-glr-thumbcontainer:hover .caption-text {
+  visibility: visible;
+  width: 160px
+}
+
+.sphx-glr-thumbcontainer:hover div.figure p.caption {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sphx-glr-thumbcontainer:hover a.internal {
+  color: white;
+}
